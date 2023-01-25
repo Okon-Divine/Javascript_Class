@@ -189,3 +189,95 @@ console.log(median)
 //console.log(med_arr[val_mid])
 
 }
+
+
+
+let assg = ["joe,blend", "kate,lepal", "mathy,donder"]
+let first_arr = []
+let second_arr = []
+let final_count = []
+
+for (let i =0; i < assg.length; i ++){
+    let b = assg[i].split(",")[0]
+    let k = assg[i].split(",")[1]
+    first_arr.push(b)
+    second_arr.push(k)
+}
+
+if (first_arr.length == second_arr.length){
+    for (let i = 0; i < first_arr.length; i++){
+        let count_a = first_arr[i].length - second_arr[i].length
+        //console.log(count_a)
+        final_count.push(count_a)
+    }
+//console.log(final_count)
+}
+else{
+    //console.log("False")
+}
+
+
+// let num = [10, 15, 13, 3, 20, 6, 9, 11, 8, 23]
+// let pos = num[0]
+
+// for (let i =0; i<num.length; i++){
+//     if (num[i] < pos){
+//         pos = num[i]
+
+//     }
+
+// }
+// console.log(pos)
+// for (let i = 0; i < num.length; i++){
+//     if (num[i] > pos){
+//         console.log(pos = num[i])
+//     }
+// }
+
+
+
+/// find the (sum arr/max_value) * (min_value)
+//////Functions ----> Resuable blocks of code!!!!
+let p = [10, 8, 16, 17]
+
+function sum_array_func(array_val){
+let array_sum = 0
+for (let i = 0; i<array_val.length; i++){
+   array_sum =  array_val[i] + array_sum
+}
+return array_sum
+}
+
+function MaxValue(array_val){
+let pos = array_val[0]
+for (let i =0; i<array_val.length; i++){
+    if (array_val[i] > pos){
+        pos = array_val[i]
+
+    }
+}
+return pos
+}
+
+
+function MinValue(array_val){
+    let pos = array_val[0]
+    for (let i =0; i<array_val.length; i++){
+        if (array_val[i] < pos){
+            pos = array_val[i]
+    
+        }
+    }
+    return pos
+    }
+
+
+
+
+let total_func = sum_array_func(p)
+let maxVal = MaxValue(p)
+let minVal = MinValue(p)
+
+let final_ans = (total_func/maxVal) * (minVal)
+console.log(final_ans)
+
