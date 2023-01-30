@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Hospital BMI Calculator</h2>
+
+<form>
+<label for="box1">Enter_Values:</label>
+<input type="text" id="box1"><br/>
+<label for="cal_id">Submit Results:</label><br>
+<input type="text" style="height:100px; width:500px" id="cal_id"><br/>
+
+<input type="button" value="MeanCalculate" onclick="mean_calculator()"><br/>
+</form>
+
+<!-- <input type="button" value="ADD" onclick="calcSum()"><br/>
+<input type="button" value="BMI" onclick="BmiCalc()"><br/> -->
+
+<script>
+function mean_calculator(){
+    let numbers_value = document.getElementById("box1").value;
+    let arry_val = [];
+    for (let i=0; i<numbers_value.length; i++){
+    let new_num = Number(numbers_value[i]);
+    arry_val.push(new_num)
+}
+let sum_val = 0;
+for (let i=0; i<arry_val.length; i++){
+    sum_val = arry_val[i] + sum_val;
+
+}
+let mean_val = sum_val/arry_val.length;
+document.getElementById("cal_id").value = mean_val;
+//console.log(mean_val)
+
+}
+
+</script>
+
+</body>
+</html>
